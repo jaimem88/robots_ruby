@@ -1,4 +1,7 @@
 class Board
+  def initialize(size)
+    @size = size
+  end
   def self.initBoard
     $done = false
     while !$done do
@@ -12,5 +15,11 @@ class Board
         end
     end
     return boardSize
+  end
+  def isValidPosition(x,y)
+    if x < self.size && y < self.size then
+      return true
+    end
+    return false
   end
 end
