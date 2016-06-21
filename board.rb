@@ -1,25 +1,18 @@
+# Author: Jaime Martinez
+# Contact: jaime.martinez88@gmail.com
+# Date:  June 21, 2016
+
+# Board class has a size attribute.
 class Board
-  def initialize(size)
-    @size = size
-  end
-  def self.initBoard
-    $done = false
-    while !$done do
-        puts "Please select the size of the board (e.g. 5):\n"
-        boardSize = gets.chomp.to_i
-        if boardSize > 0 then
-          puts "New board size is #{boardSize}\n"
-          $done = true
-        else
-          puts "Please use positive integer numbers greater than 0\n"
-        end
+  attr_accessor :size
+    def initialize(size)
+      @size = size
     end
-    return boardSize
-  end
-  def isValidPosition(x,y)
-    if x < self.size && y < self.size then
-      return true
+    # checks if a position in the board is valid
+    def isValidPosition(x,y)
+      if x < self.size && y < self.size && x >= 0 && y >= 0 then
+        return true
+      end
+      return false
     end
-    return false
-  end
 end
