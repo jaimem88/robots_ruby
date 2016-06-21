@@ -22,6 +22,3 @@ Exit at anytime by typing
 ```
 exit
 ```
-
-#### Contact
-###### Jaime Martinez <jaime.martinez88@gmail.com>
