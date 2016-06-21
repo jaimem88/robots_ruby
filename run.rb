@@ -10,6 +10,7 @@ puts "Welcome!\n"
 $newBoard = nil
 $started = false
 $robot = nil
+
 # executeCommand runs the specified command, ignores invalid commands
 def executeCommand(instruction)
   cmd, rest = instruction.split
@@ -66,8 +67,8 @@ def placeRobot(position)
     puts "Invalid position. Board size is #{$newBoard.size}."
   end
 end
-# Run the game until is stopped
 
+# Run the game until exit command or Ctrl+C
 def main()
   $init = false
   # read from terminal
@@ -102,7 +103,7 @@ def main()
   else
     # Read from file
     filename = ARGV[0]
-    if File.file?(filename) then
+    if File.file?(filename) then  # check if file exists
       f = File.open(filename, "r")
       f.each_line do |line|
         puts line
@@ -123,5 +124,5 @@ def main()
     end
   end
 end
-
+# Run main program
 main()
